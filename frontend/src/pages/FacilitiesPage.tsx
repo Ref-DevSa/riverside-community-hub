@@ -1,27 +1,38 @@
-const facilities = [
-  {
-    name: "Community Hall",
-    description:
-      "A welcoming space available for community meetings, events and activities.",
-  },
-  {
-    name: "Community Centre",
-    description:
-      "A central space where Riverside community members can access support and connect with others.",
-  },
-  {
-    name: "Recreation Area",
-    description:
-      "An area designed for community activities, recreation and social gatherings.",
-  },
-  {
-    name: "Support Services",
-    description:
-      "Information and support designed to help community members access available resources.",
-  },
-];
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
+
+type Facility = {
+  id: number;
+  name: string;
+  description: string;
+  created_at: string;
+};
 
 function FacilitiesPage() {
+  const [facilities, setFacilities] = useState<Facility[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function fetchFacilities() {
+      const { data, error } = await supabase
+        .from("facilities")
+        .select("*")
+        .order("id", { ascending: true });
+
+      if (error) {
+        setError("Unable to load facilities.");
+        setLoading(false);
+        return;
+      }
+
+      setFacilities(data ?? []);
+      setLoading(false);
+    }
+
+    fetchFacilities();
+  }, []);
+
   return (
     <main>
       <section>
@@ -34,17 +45,27 @@ function FacilitiesPage() {
       </section>
 
       <section>
-        <div>
-          {facilities.map((facility) => (
-            <article key={facility.name}>
-              <h2>{facility.name}</h2>
+        {loading && <p>Loading facilities...</p>}
 
-              <p>{facility.description}</p>
+        {error && <p>{error}</p>}
 
-              <button type="button">View Facility</button>
-            </article>
-          ))}
-        </div>
+        {!loading && !error && facilities.length === 0 && (
+          <p>No facilities are currently available.</p>
+        )}
+
+        {!loading && !error && facilities.length > 0 && (
+          <div>
+            {facilities.map((facility) => (
+              <article key={facility.id}>
+                <h2>{facility.name}</h2>
+
+                <p>{facility.description}</p>
+
+                <button type="button">View Facility</button>
+              </article>
+            ))}
+          </div>
+        )}
       </section>
     </main>
   );
