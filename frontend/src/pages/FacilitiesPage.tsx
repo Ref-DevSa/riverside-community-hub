@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 
@@ -45,9 +46,7 @@ function FacilitiesPage() {
       </section>
 
       <section>
-        {loading && (
-          <p className="status-message">Loading facilities...</p>
-        )}
+        {loading && <p className="status-message">Loading facilities...</p>}
 
         {error && <p className="status-message error-message">{error}</p>}
 
@@ -66,9 +65,12 @@ function FacilitiesPage() {
 
                   <p>{facility.description}</p>
 
-                  <button type="button" className="facility-button">
+                  <Link
+                    to={`/facilities/${facility.id}`}
+                    className="facility-button"
+                  >
                     View Facility
-                  </button>
+                  </Link>
                 </div>
               </article>
             ))}
