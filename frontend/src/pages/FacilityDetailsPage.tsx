@@ -57,20 +57,27 @@ function FacilityDetailsPage() {
 }
 
   if (error || !facility) {
-    return (
-      <main>
-        <section className="facility-details">
-          <p className="status-message error-message">
-            {error || "Facility could not be found."}
+  return (
+    <main>
+      <section className="facility-details">
+        <div className="facility-error-card">
+          <p className="facility-error-code">Oops</p>
+
+          <h1>Facility Not Found</h1>
+
+          <p>
+            We could not find the facility you are looking for. It may have
+            been removed or the link may be incorrect.
           </p>
 
           <Link to="/facilities" className="primary-button">
             Back to Facilities
           </Link>
-        </section>
-      </main>
-    );
-  }
+        </div>
+      </section>
+    </main>
+  );
+}
 
   return (
     <main>
