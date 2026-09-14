@@ -1,57 +1,85 @@
+import { Link } from "react-router-dom";
+
 function HomePage() {
   return (
     <main>
-      <section>
-        <h1>Welcome to Riverside</h1>
+      <section className="hero-section">
+        <div className="hero-content">
+          <p className="hero-label">WELCOME TO RIVERSIDE</p>
 
-        <p>
-          Creating a safe, supportive and welcoming community where people
-          can access essential facilities, support and opportunities.
-        </p>
+          <h1>Building a stronger and more connected community.</h1>
 
-        <div>
-          <a href="/facilities">Explore Our Facilities</a>
-          <a href="/donate">Support Riverside</a>
+          <p className="hero-text">
+            Riverside provides accessible facilities, community support and
+            opportunities that help people connect, grow and thrive.
+          </p>
+
+          <div className="hero-actions">
+            <Link to="/facilities" className="primary-button">
+              Explore Our Facilities
+            </Link>
+
+            <Link to="/donate" className="secondary-button">
+              Support Riverside
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section>
-        <h2>About Riverside</h2>
+      <section className="about-section">
+        <div className="section-content">
+          <h2>About Riverside</h2>
 
-        <p>
-          Riverside is committed to serving the community by providing
-          accessible facilities and creating opportunities for people to
-          connect, grow and receive support.
-        </p>
+          <p>
+            Riverside is committed to serving the community by providing
+            accessible facilities and creating opportunities for people to
+            connect, grow and receive support.
+          </p>
+        </div>
       </section>
 
-      <section>
-        <h2>What We Offer</h2>
+      <section className="offer-section">
+        <div className="section-content">
+          <div className="page-header">
+            <h2>What We Offer</h2>
 
-        <div>
-          <article>
-            <h3>Community Facilities</h3>
             <p>
-              Access facilities designed to support the needs of the Riverside
-              community.
+              Discover some of the ways Riverside supports the community.
             </p>
-          </article>
+          </div>
 
-          <article>
-            <h3>Community Support</h3>
-            <p>
-              Helping connect community members with useful resources and
-              support.
-            </p>
-          </article>
+          <div className="offer-grid">
+            <article className="offer-card">
+              <h3>Community Facilities</h3>
 
-          <article>
-            <h3>Ways to Help</h3>
-            <p>
-              Support Riverside through donations and other opportunities to
-              contribute.
-            </p>
-          </article>
+              <p>
+                Access facilities designed to support the needs of the
+                Riverside community.
+              </p>
+
+              <Link to="/facilities">View Facilities</Link>
+            </article>
+
+            <article className="offer-card">
+              <h3>Community Support</h3>
+
+              <p>
+                Helping connect community members with useful resources and
+                support.
+              </p>
+            </article>
+
+            <article className="offer-card">
+              <h3>Ways to Help</h3>
+
+              <p>
+                Support Riverside through donations and other opportunities to
+                contribute.
+              </p>
+
+              <Link to="/donate">Support Riverside</Link>
+            </article>
+          </div>
         </div>
       </section>
     </main>
