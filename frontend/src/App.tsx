@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import FacilitiesPage from "./pages/FacilitiesPage";
+import DonationPage from "./pages/DonationPage";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
 
         <Route path="/facilities" element={<FacilitiesPage />} />
 
-        <Route path="/donate" element={<div>Donate</div>} />
+        <Route path="/donate" element={<DonationPage />} />
       </Routes>
     </>
   );
