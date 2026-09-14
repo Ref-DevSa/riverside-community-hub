@@ -1,114 +1,90 @@
-# Riverside Community Hub
+# Riverside Community Website
 
 ## Project Overview
 
-Riverside Community Hub is a web platform for managing community centre memberships, facility bookings and donations.
+Riverside is a community-focused website designed to provide visitors with information about available facilities and a simple way to support the organisation through donations.
 
-The platform allows community members to create accounts, manage their profiles, book available facilities and support community donation campaigns.
+The project was created to demonstrate how a modern React and TypeScript application can connect a frontend interface to a Supabase database.
 
-Staff members can manage members, review bookings, manage facilities and monitor donations.
+## Features
 
-## Problem
+- Riverside homepage
+- Responsive navigation
+- Facilities catalogue
+- Individual facility details
+- Facility loading and error states
+- Donation form
+- Donation form validation
+- Donation submissions stored in Supabase
+- Responsive design
+- Custom 404 page
+- React Router navigation
+- Supabase data fetching
 
-Community centres often manage memberships, facility bookings and donations using separate manual processes.
-
-This can make it difficult to:
-
-- Keep track of members
-- Manage facility availability
-- Prevent booking conflicts
-- Approve or reject bookings
-- Monitor donations
-- Provide members with updates
-
-## Solution
-
-Riverside Community Hub brings these activities into one web application.
-
-The system provides:
-
-- Member registration and login
-- Email verification
-- Member profiles
-- Facility browsing
-- Facility bookings
-- Booking approval
-- Booking conflict prevention
-- Donation campaigns
-- Donation tracking
-- Notifications
-- Staff administration
-
-## User Roles
-
-### Member
-
-Members can:
-
-- Register
-- Log in
-- Verify their email
-- Manage their profile
-- View facilities
-- Create bookings
-- View their bookings
-- Cancel eligible bookings
-- Make donations
-- View notifications
-
-### Staff
-
-Staff can:
-
-- View members
-- Manage facilities
-- Review bookings
-- Approve bookings
-- Reject bookings
-- Manage donation campaigns
-- View donation information
-- Export donation information
-
-## Planned Technology Stack
-
-### Frontend
+## Technologies Used
 
 - React
 - TypeScript
 - Vite
-- Tailwind CSS
 - React Router
-
-### Backend
-
-- Node.js
-- Express
-- TypeScript
-
-### Database and Authentication
-
 - Supabase
-- PostgreSQL
-- Supabase Auth
-- Row Level Security
-- Supabase Storage
+- CSS
+- Git and GitHub
 
-## Main Modules
+## Database
 
-1. Membership
-2. Facility Bookings
-3. Donations
-4. Administration
-5. Notifications
+Supabase is used as the project's database.
+
+The project contains two main tables:
+
+### Facilities
+
+The `facilities` table stores information about community facilities.
+
+Fields include:
+
+- `id`
+- `name`
+- `description`
+- `created_at`
+
+Visitors can read facility information from Supabase.
+
+### Donations
+
+The `donations` table stores donation submissions.
+
+Fields include:
+
+- `id`
+- `donor_name`
+- `donor_email`
+- `amount`
+- `message`
+- `status`
+- `created_at`
+
+Public visitors can submit donation information, but donation records are not publicly readable.
 
 ## Project Structure
 
 ```text
-riverside-community-hub/
-│
-├── frontend/
-├── backend/
-├── supabase/
-├── docs/
-├── .gitignore
-└── README.md
+frontend/
+└── src/
+    ├── components/
+    │   ├── Navbar.tsx
+    │   └── Footer.tsx
+    │
+    ├── pages/
+    │   ├── HomePage.tsx
+    │   ├── FacilitiesPage.tsx
+    │   ├── FacilityDetailsPage.tsx
+    │   ├── DonationPage.tsx
+    │   └── NotFoundPage.tsx
+    │
+    ├── lib/
+    │   └── supabase.ts
+    │
+    ├── App.tsx
+    ├── main.tsx
+    └── index.css
