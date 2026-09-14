@@ -411,3 +411,41 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+.facility-details {
+  max-width: 900px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.facility-details-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.facility-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: #6b7280;
+}
+
+.facility-details-description {
+  max-width: 700px;
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+.facility-details-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
