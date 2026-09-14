@@ -449,3 +449,43 @@ p {
   margin-top: 2rem;
   flex-wrap: wrap;
 }
+
+.not-found-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.not-found-card {
+  max-width: 650px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.not-found-code {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.not-found-card h1 {
+  margin-bottom: 1rem;
+}
+
+.not-found-card p:not(.not-found-code) {
+  color: #4b5563;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
