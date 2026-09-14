@@ -123,3 +123,56 @@ p {
   h1 {
     font-size: 2rem;
   }}
+
+  .page-header {
+  text-align: center;
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.facility-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.facility-card h2 {
+  margin-bottom: 0.75rem;
+}
+
+.facility-card p {
+  color: #4b5563;
+}
+
+.facility-button {
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  background: #1f2933;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.facility-button:hover {
+  opacity: 0.9;
+}
+
+.status-message {
+  text-align: center;
+}
+
+.error-message {
+  color: #b91c1c;
+}
+
+@media (max-width: 700px) {
+  .facility-grid {
+    grid-template-columns: 1fr;
+  }
+}

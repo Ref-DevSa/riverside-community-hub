@@ -35,7 +35,7 @@ function FacilitiesPage() {
 
   return (
     <main>
-      <section>
+      <section className="page-header">
         <h1>Our Facilities</h1>
 
         <p>
@@ -45,23 +45,31 @@ function FacilitiesPage() {
       </section>
 
       <section>
-        {loading && <p>Loading facilities...</p>}
+        {loading && (
+          <p className="status-message">Loading facilities...</p>
+        )}
 
-        {error && <p>{error}</p>}
+        {error && <p className="status-message error-message">{error}</p>}
 
         {!loading && !error && facilities.length === 0 && (
-          <p>No facilities are currently available.</p>
+          <p className="status-message">
+            No facilities are currently available.
+          </p>
         )}
 
         {!loading && !error && facilities.length > 0 && (
-          <div>
+          <div className="facility-grid">
             {facilities.map((facility) => (
-              <article key={facility.id}>
-                <h2>{facility.name}</h2>
+              <article className="facility-card" key={facility.id}>
+                <div className="facility-card-content">
+                  <h2>{facility.name}</h2>
 
-                <p>{facility.description}</p>
+                  <p>{facility.description}</p>
 
-                <button type="button">View Facility</button>
+                  <button type="button" className="facility-button">
+                    View Facility
+                  </button>
+                </div>
               </article>
             ))}
           </div>
