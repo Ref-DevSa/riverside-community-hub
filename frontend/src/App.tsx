@@ -6,6 +6,7 @@ import FacilitiesPage from "./pages/FacilitiesPage";
 import DonationPage from "./pages/DonationPage";
 import { supabase } from "./lib/supabase";
 import FacilityDetailsPage from "./pages/FacilityDetailsPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   void supabase;
@@ -22,6 +23,7 @@ function App() {
         <Route path="/facilities/:id" element={<FacilityDetailsPage />} />
 
         <Route path="/donate" element={<DonationPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
       <Footer />
