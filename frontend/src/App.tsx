@@ -4,8 +4,11 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import FacilitiesPage from "./pages/FacilitiesPage";
 import DonationPage from "./pages/DonationPage";
+import { supabase } from "./lib/supabase";
 
 function App() {
+  void supabase;
+
   return (
     <>
       <Navbar />
