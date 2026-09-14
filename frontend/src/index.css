@@ -523,3 +523,31 @@ p {
     transform: rotate(360deg);
   }
 }
+
+.facility-error-card {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.facility-error-code {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #b91c1c;
+}
+
+.facility-error-card h1 {
+  margin-bottom: 1rem;
+}
+
+.facility-error-card p:not(.facility-error-code) {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
