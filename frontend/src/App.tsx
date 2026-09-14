@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import FacilitiesPage from "./pages/FacilitiesPage";
 import DonationPage from "./pages/DonationPage";
 import { supabase } from "./lib/supabase";
+import FacilityDetailsPage from "./pages/FacilityDetailsPage";
 
 function App() {
   void supabase;
@@ -17,6 +18,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
 
         <Route path="/facilities" element={<FacilitiesPage />} />
+
+        <Route path="/facilities/:id" element={<FacilityDetailsPage />} />
 
         <Route path="/donate" element={<DonationPage />} />
       </Routes>
