@@ -64,8 +64,18 @@ p {
   gap: 1.5rem;
 }
 
+.navbar-links a {
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+}
+
 .navbar-links a:hover {
-  text-decoration: underline;
+  border-bottom-color: #1f2933;
+}
+
+.navbar-links .active-link {
+  font-weight: 700;
+  border-bottom-color: #1f2933;
 }
 
 .footer {
