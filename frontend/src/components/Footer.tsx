@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer>
-      <div>
+    <footer className="footer">
+      <div className="footer-section">
         <h2>Riverside</h2>
 
         <p>
@@ -10,24 +10,24 @@ function Footer() {
         </p>
       </div>
 
-      <div>
+      <div className="footer-section">
         <h3>Quick Links</h3>
 
-        <nav>
+        <nav className="footer-links">
           <a href="/">Home</a>
           <a href="/facilities">Facilities</a>
           <a href="/donate">Donate</a>
         </nav>
       </div>
 
-      <div>
+      <div className="footer-section">
         <h3>Contact</h3>
 
-        <p>Email: info@riverside.org.za</p>
-        <p>Phone: +27 12 541 8001</p>
+        <p>Email: info@riverside.org</p>
+        <p>Phone: +27 00 000 0000</p>
       </div>
 
-      <div>
+      <div className="footer-bottom">
         <p>© 2026 Riverside. All rights reserved.</p>
       </div>
     </footer>
