@@ -1,11 +1,12 @@
+import { Routes, Route } from "react-router-dom";
+
 function App() {
   return (
-    <main>
-      <h1>Riverside Community Hub</h1>
-      <p>
-        Community memberships, facility bookings and donations in one place.
-      </p>
-    </main>
+    <Routes>
+      <Route path="/" element={<div>Riverside Home</div>} />
+      <Route path="/facilities" element={<div>Facilities</div>} />
+      <Route path="/donate" element={<div>Donate</div>} />
+    </Routes>
   );
 }
 
