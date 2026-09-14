@@ -65,7 +65,7 @@ function DonationPage() {
 
   return (
     <main>
-      <section>
+      <section className="page-header">
         <h1>Support Riverside</h1>
 
         <p>
@@ -74,72 +74,86 @@ function DonationPage() {
         </p>
       </section>
 
-      <section>
-        <h2>Make a Donation</h2>
+      <section className="donation-section">
+        <div className="donation-card">
+          <div className="donation-card-header">
+            <h2>Make a Donation</h2>
 
-        {success && <p>{success}</p>}
-
-        {error && <p>{error}</p>}
-
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Full Name</label>
-
-            <input
-              id="name"
-              name="name"
-              type="text"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              placeholder="Enter your full name"
-            />
+            <p>
+              Complete the form below to let us know about your contribution.
+            </p>
           </div>
 
-          <div>
-            <label htmlFor="email">Email Address</label>
+          {success && (
+            <p className="form-message success-message">{success}</p>
+          )}
 
-            <input
-              id="email"
-              name="email"
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              placeholder="Enter your email address"
-            />
-          </div>
+          {error && <p className="form-message error-message">{error}</p>}
 
-          <div>
-            <label htmlFor="amount">Donation Amount</label>
+          <form className="donation-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Full Name</label>
 
-            <input
-              id="amount"
-              name="amount"
-              type="number"
-              min="1"
-              step="0.01"
-              value={amount}
-              onChange={(event) => setAmount(event.target.value)}
-              placeholder="Enter donation amount"
-            />
-          </div>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                placeholder="Enter your full name"
+              />
+            </div>
 
-          <div>
-            <label htmlFor="message">Message</label>
+            <div className="form-group">
+              <label htmlFor="email">Email Address</label>
 
-            <textarea
-              id="message"
-              name="message"
-              value={message}
-              onChange={(event) => setMessage(event.target.value)}
-              placeholder="Leave an optional message"
-              rows={5}
-            />
-          </div>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="Enter your email address"
+              />
+            </div>
 
-          <button type="submit" disabled={loading}>
-            {loading ? "Submitting..." : "Continue with Donation"}
-          </button>
-        </form>
+            <div className="form-group">
+              <label htmlFor="amount">Donation Amount</label>
+
+              <input
+                id="amount"
+                name="amount"
+                type="number"
+                min="1"
+                step="0.01"
+                value={amount}
+                onChange={(event) => setAmount(event.target.value)}
+                placeholder="Enter donation amount"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+
+              <textarea
+                id="message"
+                name="message"
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                placeholder="Leave an optional message"
+                rows={5}
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="donation-button"
+              disabled={loading}
+            >
+              {loading ? "Submitting..." : "Continue with Donation"}
+            </button>
+          </form>
+        </div>
       </section>
     </main>
   );
