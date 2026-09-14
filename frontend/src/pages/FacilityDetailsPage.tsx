@@ -43,14 +43,18 @@ function FacilityDetailsPage() {
   }, [id]);
 
   if (loading) {
-    return (
-      <main>
-        <section>
-          <p className="status-message">Loading facility...</p>
-        </section>
-      </main>
-    );
-  }
+  return (
+    <main>
+      <section className="facility-details">
+        <div className="facility-loading-card">
+          <div className="loading-spinner"></div>
+
+          <p>Loading facility...</p>
+        </div>
+      </section>
+    </main>
+  );
+}
 
   if (error || !facility) {
     return (
