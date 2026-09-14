@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import FacilitiesPage from "./pages/FacilitiesPage";
 import DonationPage from "./pages/DonationPage";
@@ -16,6 +17,8 @@ function App() {
 
         <Route path="/donate" element={<DonationPage />} />
       </Routes>
+
+      <Footer />
     </>
   );
 }
